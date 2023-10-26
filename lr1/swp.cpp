@@ -5,7 +5,7 @@ void swap1(int a, int b);
 void swap2(int *a, int *b);
 void swap3(int &a, int &b);
 
-int main (void) {
+int main () {
     int a = 2, b = 5;
 
     cout << "До обмена:\t a=" << a << ", b=" << b << endl;

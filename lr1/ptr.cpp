@@ -3,7 +3,7 @@
 //Выводим адрес указателя, значение по указателю, адрес переменной с указателем
 #define DEBUG_PTR(x) printf("x=%p, *x=%d, &x=%p\n", x, *x, &x);
 
-int main (void) {
+int main () {
     int array[] = {100, 200, 300};
     int *ptr1, *ptr2;
     ptr1 = array;
