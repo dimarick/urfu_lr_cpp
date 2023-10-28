@@ -1,8 +1,2 @@
-/lr1_ptr
-/cmake-build-debug/
-/CMakeCache.txt
-/lr1_swp
-/cmake_install.cmake
-/Makefile
-/lr1_power
-/CMakeFiles/
+/build/
+!./build/.gitkeep
