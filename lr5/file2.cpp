@@ -1,19 +1,19 @@
-#include <iostream>
+#include <cstdio>
+#include <cerrno>
 #include <cstring>
 #include <regex>
 
-int getPageNumber(char *buffer);
-const char *getPageContent(char *buffer);
-
+int getPageNumber(const char *buffer);
+const char *getPageContent(const char *buffer);
 
 using namespace std;
 
-// Используем Raw string literals
+// Используем Raw string literals. Объявляем статически, чтобы компилировать 1 раз, а использовать многократно в разных функциях
 static const regex pageStartRegex(R"(\s*-\s*(\d+)\s*-\s*)");
 
 int main(int arc, char *argv[]) {
     if (arc < 3) {
-        cout << "Usage: " << argv[0] << " input output" << endl;
+        printf("Usage: %s input output", argv[0]);
 
         return 1;
     }
@@ -51,6 +51,26 @@ int main(int arc, char *argv[]) {
 
         auto c = (char)ic;
 
+        // Обработка разрыва страниц
+        if (c == '\f') {
+            // Парсим номер страницы из начала буфера
+            int pageNo = getPageNumber(pageBuffer);
+
+            // Если не получилось - сохраняем как было
+            if (pageNo == -1) {
+                fprintf(out, "%s\f", pageBuffer);
+                continue;
+            }
+
+            // Находим начало содержимого после номера страницы
+            auto pageContent = getPageContent(pageBuffer);
+
+            // Форматируем согласно ТЗ
+            fprintf(out, "%s\n%d\n\f", pageContent, pageNo);
+
+            cursor = 0;
+        }
+
         if (cursor >= pageBufferSize - 1) {
             // Удваиваем размер буфера
             pageBufferSize *= 2;
@@ -71,16 +91,6 @@ int main(int arc, char *argv[]) {
             pageBuffer = newBuffer;
         }
 
-        // Обработка разрыва страниц
-        if (c == '\f') {
-            int pageNo = getPageNumber(pageBuffer);
-            auto pageContent = getPageContent(pageBuffer);
-
-            fprintf(out, "%s\n%d\n\f", pageContent, pageNo);
-
-            cursor = 0;
-        }
-
         pageBuffer[cursor++] = c;
         pageBuffer[cursor] = '\0';
     }
@@ -92,7 +102,10 @@ int main(int arc, char *argv[]) {
     return 0;
 }
 
-int getPageNumber(char *buffer) {
+/**
+ * Парсит номер страницы в формате "- XXX -" в начале страницы текста
+ */
+int getPageNumber(const char *buffer) {
     // Используем Raw string literals
     smatch m;
     auto s = string(buffer);
@@ -108,12 +121,17 @@ int getPageNumber(char *buffer) {
     return -1;
 }
 
-const char *getPageContent(char *buffer) {
+/**
+ * Находит начало текста, следующего за номером страницы
+ */
+const char *getPageContent(const char *buffer) {
     smatch m;
     auto s = string(buffer);
 
+    // Используем ту же регулярку
     if (regex_search(s, m, pageStartRegex)) {
         if (m.size() > 1) {
+            // Но теперь берем смещение конца матча
             return buffer + m.position(0) + m.length();
         }
     }

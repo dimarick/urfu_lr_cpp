@@ -1,11 +1,12 @@
-#include <iostream>
+#include <cstdio>
+#include <cerrno>
 #include <cstring>
 
 using namespace std;
 
 int main(int arc, char *argv[]) {
     if (arc < 4) {
-        cout << "Usage: " << argv[0] << " key input output" << endl;
+        printf("Usage: %s key input output", argv[0]);
 
         return 1;
     }
@@ -43,6 +44,7 @@ int main(int arc, char *argv[]) {
 
         auto c = (char) ic;
 
+        // собственно шифрование
         auto e = c ^ key[cursor % keyLength];
 
         fputc(e, out);
