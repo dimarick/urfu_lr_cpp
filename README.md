@@ -36,7 +36,7 @@
 `lr6_main`
 
 Лабораторная работа 8
-1. `echo "test string" | build/lr8_strings`
+1. `echo "test" | build/lr8_strings`
 2. `build/lr8_template1 && build/lr8_template2 && build/lr8_template3`
 3. `build/lr8_encrypt "secret password" lr5/test.txt /tmp/test2.txt && build/lr5_file3 "secret password" /tmp/test2.txt /tmp/test3.txt && cat /tmp/test3.txt`
 4. Неясно о каких именно методах идет речь
