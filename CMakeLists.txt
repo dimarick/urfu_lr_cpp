@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.16)
 project(lr)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_FLAGS_DEBUG_INIT "-Wall")
+set(CMAKE_CXX_FLAGS_RELEASE_INIT "-Wall -O3")
 
 add_executable(lr1_power lr1/power.cpp)
 add_executable(lr1_ptr lr1/ptr.cpp)
@@ -16,3 +18,4 @@ add_executable(lr4_strings_array lr4/strings.cpp lr4/strings_4array.cpp)
 add_executable(lr5_file1 lr5/file1.cpp)
 add_executable(lr5_file2 lr5/file2.cpp)
 add_executable(lr5_file3 lr5/file3.cpp)
+add_executable(lr6_main lr6/Str.cpp lr6/main.cpp)
