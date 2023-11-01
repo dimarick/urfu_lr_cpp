@@ -50,7 +50,7 @@ jobs:
         run: (echo "lr5/file1.cpp" && echo search) | build/lr5_file1 && cat matches.txt
 
       - name: "Лабораторная работа 5, п. 4"
-        run: build/lr5_file2 /home/dima/lr_cpp/lr5/test.txt /tmp/test2.txt && cat /tmp/test2.txt
+        run: build/lr5_file2 lr5/test.txt /tmp/test2.txt && cat /tmp/test2.txt
 
       - name: "Лабораторная работа 5, п. 5-6"
         run: build/lr5_file3 "secret password" lr5/test.txt /tmp/test2.txt && build/lr5_file3 "secret password" /tmp/test2.txt /tmp/test3.txt && cat /tmp/test3.txt
