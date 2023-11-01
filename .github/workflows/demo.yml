@@ -59,7 +59,7 @@ jobs:
         run: build/lr6_main
 
       - name: "Лабораторная работа 8, п. 1"
-        run: build/lr8_strings
+        run: echo "test string" | build/lr8_strings
 
       - name: "Лабораторная работа 8, п. 2.1"
         run: build/lr8_template1
