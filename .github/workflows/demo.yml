@@ -1,0 +1,14 @@
+name: Демо работоспособности всех утилит
+
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: mkdir build
+      - run: cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
+      - run: cd build && make
+      - name: "Лабораторная работа 6"
+        run: build/lr6_main
+
