@@ -7,7 +7,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir build
       - run: cd build && cmake -DCMAKE_BUILD_TYPE=Release ..
       - run: cd build && make
       - name: "Лабораторная работа 6"
