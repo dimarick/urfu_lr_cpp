@@ -1,3 +1,7 @@
+Статус
+======
+[![Демо работоспособности всех утилит](https://github.com/dimarick/urfu_lr_cpp/actions/workflows/demo.yml/badge.svg)](https://github.com/dimarick/urfu_lr_cpp/actions/workflows/demo.yml)
+
 Сборка
 ======
 
@@ -28,5 +32,11 @@
 4. `build/lr5_file2 lr5/test.txt /tmp/test2.txt && cat /tmp/test2.txt`
 5, 6. `build/lr5_file3 "secret password" lr5/test.txt /tmp/test2.txt && build/lr5_file3 "secret password" /tmp/test2.txt /tmp/test3.txt && cat /tmp/test3.txt`
 
-Лабораторная работа 5
+Лабораторная работа 6
 `lr6_main`
+
+Лабораторная работа 8
+1. `build/lr8_strings`
+2. `build/lr8_template1 && build/lr8_template2 && build/lr8_template3`
+3. `build/lr8_encrypt "secret password" lr5/test.txt /tmp/test2.txt && build/lr5_file3 "secret password" /tmp/test2.txt /tmp/test3.txt && cat /tmp/test3.txt`
+4. Неясно о каких именно методах идет речь

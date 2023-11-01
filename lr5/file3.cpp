@@ -45,7 +45,7 @@ int main(int arc, char *argv[]) {
         auto c = (char) ic;
 
         // собственно шифрование
-        auto e = c ^ key[cursor % keyLength];
+        auto e = (char)(c ^ key[cursor % keyLength]);
 
         fputc(e, out);
 
