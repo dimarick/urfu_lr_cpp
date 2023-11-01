@@ -26,7 +26,7 @@
 Лабораторная работа 5
 1, 2, 3. `(echo "lr5/file1.cpp" && echo search) | build/lr5_file1 && cat matches.txt`
 4. `build/lr5_file2 /home/dima/lr_cpp/lr5/test.txt /tmp/test2.txt && cat /tmp/test2.txt`
-5, 6. `build/lr5_file3 "secret password" /home/dima/lr_cpp/lr5/test.txt /tmp/test2.txt && build/lr5_file3 "secret password" /tmp/test2.txt /tmp/test3.txt && cat /tmp/test3.txt`
+5, 6. `build/lr5_file3 "secret password" lr_cpp/lr5/test.txt /tmp/test2.txt && build/lr5_file3 "secret password" /tmp/test2.txt /tmp/test3.txt && cat /tmp/test3.txt`
 
 Лабораторная работа 5
 `lr6_main`
