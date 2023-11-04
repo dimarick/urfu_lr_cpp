@@ -40,3 +40,8 @@
 2. `build/lr8_template1 && build/lr8_template2 && build/lr8_template3`
 3. `build/lr8_encrypt "secret password" lr5/test.txt /tmp/test2.txt && build/lr5_file3 "secret password" /tmp/test2.txt /tmp/test3.txt && cat /tmp/test3.txt`
 4. Неясно о каких именно методах идет речь
+
+Лабораторная работа 9
+
+1-2. См. п2. Лабораторной работы 8
+3. `build/lr9_train_sort`

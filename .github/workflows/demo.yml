@@ -72,3 +72,6 @@ jobs:
 
       - name: "Лабораторная работа 8, п. 3"
         run: build/lr8_encrypt "secret password" lr5/test.txt /tmp/test2.txt && build/lr5_file3 "secret password" /tmp/test2.txt /tmp/test3.txt && cat /tmp/test3.txt
+
+      - name: "Лабораторная работа 9"
+        run: build/lr9_train_sort 10 3 && build/lr9_train_sort 100 100 && build/lr9_train_sort 10000 11

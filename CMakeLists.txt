@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 3.16)
 project(lr)
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_FLAGS_DEBUG_INIT "-Wall")
-set(CMAKE_CXX_FLAGS_RELEASE_INIT "-Wall -O3")
+
+set(RELEASE_FLAGS "-Wall -O2 -marc=native -mtune=native")
+set(DEBUG_FLAGS "-Wall -O0 -ggdb3")
 
 add_executable(lr1_power lr1/power.cpp)
 add_executable(lr1_ptr lr1/ptr.cpp)
@@ -24,3 +25,4 @@ add_executable(lr8_template1 lr8/template1.cpp)
 add_executable(lr8_template2 lr8/template2.cpp)
 add_executable(lr8_template3 lr8/template3.cpp)
 add_executable(lr8_encrypt lr8/encrypt.cpp)
+add_executable(lr9_train_sort lr9/train_sort.cpp)
