@@ -7,6 +7,7 @@ template <class T>
 T getmax(T t1, T t2) {
     return t1 > t2 ? t1 : t2;
 }
+// специализированная версия для char *: требуется особый способ сравнения
 char *getmax(char *t1, char *t2) {
     return strcmp(t1, t2) > 0 ? t1 : t2;
 }

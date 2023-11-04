@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Шаблоны getmax для 2 значений и массива
 template <class T>
 T getmax(T t1, T t2) {
     return t1 > t2 ? t1 : t2;
@@ -21,6 +22,7 @@ T getmax(T t[], size_t size) {
 }
 
 int main() {
+    // проверяем работу
     int i1 = 2, i2 = 5;
     int ints[] = {3, 9, 5, 8};
 

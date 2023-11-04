@@ -2,8 +2,12 @@
 
 using namespace std;
 
+// template <class T> объявляет что нижеследующий класс содержит переменную T, являющуюся классом
 template <class T>
+// теперь мы можем написать сортировку сразу для всех классов, поддерживающих оператор ">"
+// компилятор сам сгенерирует подходщую реалзиацию, подставив вместо T, нужный тип
 void Sort(T array[], size_t size) {
+    // пузырьковая сортировка
     for (size_t i = 0; i < size - 1; ++i) {
         for (size_t j = size - 1; i < j; --j) {
             if (array[i] > array[j]) {
@@ -25,7 +29,9 @@ public:
         cents = c;
     }
 
+    // Без оператора сравнения ничего нельзя отсортировать
     int operator > (const Money&) const;
+    // Для удобной работы с потоками
     friend ostream& operator << (ostream& os, Money& money);
 };
 
