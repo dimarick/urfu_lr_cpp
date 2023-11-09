@@ -75,3 +75,6 @@ jobs:
 
       - name: "Лабораторная работа 9"
         run: build/lr9_train_sort 10 3 && build/lr9_train_sort 100 100 && build/lr9_train_sort 10000 11
+
+      - name: "Лабораторная работа 10"
+        run: cat lr10/test_script.txt | build/lr10_bus_park

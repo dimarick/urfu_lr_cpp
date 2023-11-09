@@ -1,0 +1,24 @@
+help
+show
+show park
+show active
+go 1 5
+show park
+show active
+stop 1 4
+show park
+show active
+go 3 4 5
+show park
+show active
+go 1 2
+show park
+show active
+stop 1 2 3 4 5
+show park
+show active
+stop asdf gda 1 2 s
+go asdf gda 1 2 -s -5
+show park
+show active
+exit

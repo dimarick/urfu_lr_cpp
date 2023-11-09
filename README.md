@@ -46,3 +46,7 @@
 1-2. См. п2. Лабораторной работы 8
 
 3. `build/lr9_train_sort`
+
+Лабораторная работа 10
+
+`cat lr10/test_script.txt | build/lr10_bus_park`
